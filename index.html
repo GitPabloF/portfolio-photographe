@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Louna - Photographe professionnelle</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+		rel="stylesheet">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+	<!-- ajout bannière mode édition -->
+	<div id="edition">
+		<button> <i class="fas fa-pen-to-square"></i>Mode édition</button>
+		<button>publier les changements</button>
+	</div>
+	<!-- fin ajout bannière mode édition -->
+	<header>
+		<h1><a href="index.html">Louna Sitbon <span></span></a></h1>
+		<nav>
+			<ul>
+				<li><a href="#portfolio">projets</a></li>
+				<li><a href="#contact">contact</a></li>
+				<li><a href="LogIn/LogIn.html" id="nav-login">login</a></li> 
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="introduction">
+			<figure>
+				<img src="./assets/images/sophie-bluel.png" alt="">
+				<div id="div-img-modifer">
+					<a href="#" class="btn_modifier"><i class="fas fa-pen-to-square"></i>modifier</a>
+				</div>
+			</figure>
+			<article>
+				<a href="#" class="btn_modifier" id="intro-btn-modifier"><i
+						class="fas fa-pen-to-square"></i>modifier</a>
+				<h2>Designer d'espace</h2>
+				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
+					finale du chantier.</p>
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+					couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
+					chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
+					décorateur(trice).</p>
+			</article>
+		</section>
+
+		<section id="portfolio">
+			<!-- Ajout du btn de modification -->
+			<h2>Mes Projets <a href="#modale-conteneur" class="btn_modifier" id="portfolio-modifier-a"><i
+						class="fas fa-pen-to-square"></i>modifier</a></h2>
+			<!-- Ajout de la modale -->
+			<div id="modale-conteneur" aria-hidden="true" role="dialog" aria-labelledby="modale-titre">
+				<div id="modale">
+					<!-- modale index -->
+					<div class="modale-page" id="modale_index">
+						<button class="" id="index-modale_close" aria-label="fermer la modale"><i
+								class="fa-solid fa-xmark"></i>
+						</button>
+						<h3 id="modale-titre">Galerie photo</h3>
+						<div id="modale-card-conteneur">
+						</div>
+						<div class="modale-ligne"></div>
+						<button id="modale-ajout_photo">Ajouter une photo</button>
+						<button id="modale-supprimer-galerie">Supprimer la galerie</button>
+					</div>
+					<!-- modale page ajout photo -->
+					<div class="modale-page" id="modale_ajout_projet">
+						<button id="modale-retour" aria-label="revenir à la page 1 de la modale">
+							<i class="fa fa-arrow-left"></i>
+						</button>
+						<button class="" id="modale-page2-close" aria-label="fermer la modale">
+							<i class="fa-solid fa-xmark"></i>
+						</button>
+						<h3 id="modale-titre">Ajout photo</h3>
+						<form id="modale-form">
+							<div id="container-ajouter-fichier">
+								<input type="file" accept=".jpg, .png" max-size="4000000" name="image" id="ajouter-fichier">
+								<label for="ajouter-fichier" id="label-ajouter-fichier">+ Ajouter photo</label>
+								<p>jpg,png : 4mo max</p>
+							</div>
+							<label for="label-ajouter-titre" id="label-ajouter-titre">Titre</label>
+							<input type="text" name="title" id="ajouter-titre" class="modale-form-input">
+							<label for="select_categorie" id="label-select_categorie">Catégorie</label>
+							<select id="select_categorie" name="category" class="modale-form-input">
+								<option disabled selected></option>
+								<option value="1">Objets</option>
+								<option value="2">Appartements</option>
+								<option value="3">Hôtels & restaurants</option>
+							</select>
+							<p id="form_incomplet">Veuillez remplir tous les champs nécessaires.</p>
+							<div class="modale-ligne"></div>
+							<input type="submit" value="Valider" id="modale-form-submit">
+						</form>
+					</div>
+				</div>
+			</div>
+			</div>
+			<!-- Ajout des btn de filtrage -->
+			<div id="filtres">
+				<button class="category-button selected" id="tous">Tous</button>
+
+				<button class="category-button" id="Objets">Objets</button>
+
+				<button class="category-button" id="appartements">Appartements</button>
+
+				<button class="category-button" id="hotels_restaurants">Hotels & restaurants</button>
+
+			</div>
+			<!-- Fin ajout filtre  -->
+			<div class="gallery">
+			</div>
+		</section>
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>Vous avez un projet ? Discutons-en !</p>
+			<form action="#" method="post">
+				<label for="name">Nom</label>
+				<input type="text" name="name" id="name">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+				<label for="message">Message</label>
+				<textarea name="message" id="message" cols="30" rows="10"></textarea>
+				<input type="submit" value="Envoyer">
+			</form>
+		</section>
+
+	</main>
+
+	<footer>
+		<nav>
+			<ul>
+				<li>Mentions Légales</li>
+			</ul>
+		</nav>
+	</footer>
+
+	<script src="script.js">
+
+
+	</script>
+
+</body>
+
+</html>
